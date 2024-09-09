@@ -1,4 +1,4 @@
-﻿import { User, ShoppingCart, MagnifyingGlass } from "@phosphor-icons/react"
+﻿import { MagnifyingGlass, ShoppingCart, User } from "@phosphor-icons/react"
 import { Link } from "react-router-dom"
 
 function Navbar() {
@@ -47,7 +47,7 @@ function Navbar() {
                     <Link to='/categorias' className='hover:underline'>Categorias</Link>
                     <Link to='/cadcategoria' className='hover:underline'>Cadastrar Categoria</Link>
                     <User size={32} weight='bold' />
-                    <ShoppingCart size={32} weight='bold' />
+                    <Link to='/cart'><ShoppingCart size={32} weight='bold' /></Link>
                 </div>
             </div>
         </div>

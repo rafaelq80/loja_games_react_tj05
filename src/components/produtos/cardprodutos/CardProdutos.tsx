@@ -1,5 +1,7 @@
 ﻿import { Pencil, Trash } from "@phosphor-icons/react"
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { CartContext } from "../../../contexts/CartContext"
 import Produto from "../../../models/Produto"
 
 interface CardProdutoProps {
@@ -8,6 +10,8 @@ interface CardProdutoProps {
 
 function CardProdutos({ produto }: CardProdutoProps) {
 
+  const { adicionarProduto } = useContext(CartContext)
+  
   return (
     <div className='flex flex-col rounded-lg overflow-hidden justify-between bg-white my-10'>
       <div className="flex justify-end items-end pt-2 pr-2">
@@ -39,7 +43,7 @@ function CardProdutos({ produto }: CardProdutoProps) {
       </div>
       <div className="flex flex-wrap">
         <button className='w-full text-white bg-teal-500 hover:bg-teal-900 flex items-center justify-center py-2'
-          >
+          onClick={() => adicionarProduto(produto)}>
           Comprar
         </button>
       </div>
