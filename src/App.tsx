@@ -6,6 +6,9 @@ import ListarCategorias from './components/categorias/listarcategorias/ListarCat
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import Home from './pages/home/Home';
+import DeletarProduto from './components/produtos/deletarprodutos/DeletarProduto';
+import FormularioProduto from './components/produtos/formproduto/FormularioProduto';
+import ListarProdutos from './components/produtos/listarprodutos/ListarProdutos';
 
 function App() {
 
@@ -13,7 +16,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <div className='bg-gray-200 min-h-[68vh]'>
+        <div className='min-h-[90vh] bg-gray-200'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
@@ -21,6 +24,10 @@ function App() {
             <Route path="/cadcategoria" element={<FormCategoria />} />
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
             <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
+            <Route path="/produtos" element={<ListarProdutos />} />
+            <Route path="/cadastrarproduto" element={<FormularioProduto />} />
+            <Route path="/editarproduto/:id" element={<FormularioProduto />} />
+            <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
           </Routes>
         </div>
         <Footer />
